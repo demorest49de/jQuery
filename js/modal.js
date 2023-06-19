@@ -1,6 +1,6 @@
 export const createModal = () => {
     const modalOverlay = document.createElement('div');
-    modalOverlay.classList.add('modal-overlay','is-visible');
+    modalOverlay.classList.add('modal-overlay');
 
     const modalForm = document.createElement('form');
     modalForm.classList.add('modal-form', 'form');
