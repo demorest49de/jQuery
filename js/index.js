@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import {createModal} from './modal.js';
 
 const container = $('<div>');
