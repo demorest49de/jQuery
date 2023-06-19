@@ -1,19 +1,31 @@
 import $ from 'jquery';
 import {createModal} from './modal.js';
-// <!-- Remember to include jQuery :) -->
-// <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-//
-// <!-- jQuery Modal -->
-// <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-// <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 
-import 'jquery-modal/jquery.modal.min.js';
-import 'jquery-modal/jquery.modal.min.css';
+const container = $('<div>');
+container.css({
+    marginTop: `20px`
+});
+container.addClass('container');
+$('body').append(container);
 
-const div = $('<div>');
-div.addClass('container');
-$('body').append(div);
+const button = $('<button type="button" class="btn btn-secondary">нажми меня</button>');
+button.css({
+    padding: `5px 10px`,
+});
 
-const {modalOverlay, modalForm} = createModal();
-$('body').append(modalOverlay);
-modalOverlay.classList.toggle('is-visible');
+
+container.append(button);
+
+const {modalForm} = createModal();
+
+$('body').append(modalForm);
+
+const btnclckMe = $('.btn');
+const btnFormClose = $('.form__btn-close');
+btnclckMe.click(function () {
+    $('.modal-form').show(1000);
+});
+
+btnFormClose.click(function () {
+    $('.modal-form').hide(1000);
+})

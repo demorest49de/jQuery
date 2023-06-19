@@ -1,6 +1,6 @@
 export const createModal = () => {
     const modalOverlay = document.createElement('div');
-    modalOverlay.classList.add('modal-overlay');
+    modalOverlay.classList.add('modal-overlay','is-visible');
 
     const modalForm = document.createElement('form');
     modalForm.classList.add('modal-form', 'form');
@@ -22,6 +22,7 @@ export const createModal = () => {
           <button type="submit" class="btn btn-primary form__submit" 
           tabindex="2"> Сохранить </button>
         </div>
+        <button type="button" class="form__btn-close"></button>
       </div>
     `);
     modalOverlay.append(modalForm);
